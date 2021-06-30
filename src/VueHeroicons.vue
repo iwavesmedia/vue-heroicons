@@ -34,9 +34,9 @@
 import './assets/css/tailwind.css';
 import icons from './assets/icons.json';
 
-import DoublePathIcons from "./assets/DoublePathIcons";
-import FilledDoublePathIcons from "./assets/FilledDoublePathIcons";
-import TriplePathFilledIcons from "./assets/TriplePathFilledIcons";
+import DoublePathIcons from './assets/DoublePathIcons';
+import FilledDoublePathIcons from './assets/FilledDoublePathIcons';
+import TriplePathFilledIcons from './assets/TriplePathFilledIcons';
 
 export default {
   name: 'VueHeroicons',
@@ -44,73 +44,73 @@ export default {
   props: {
     clipRule: {
       type: String,
-      default: ''
+      default: '',
     },
 
     fillRulePath2: {
       type: String,
-      default: ''
+      default: '',
     },
 
     clipRulePath2: {
       type: String,
-      default: ''
+      default: '',
     },
 
     name: {
       type: String,
-      required: true
+      required: true,
     },
 
     isFilled: {
       type: Boolean,
-      default: false
+      default: false,
     },
 
     fillColor: {
       type: String,
-      default: 'none'
+      default: 'none',
     },
 
     fillRule: {
       type: String,
-      default: 'nonzero'
+      default: 'nonzero',
     },
 
     classIcon: {
       type: String,
-      default: ''
+      default: '',
     },
 
     strokeColor: {
       type: String,
-      default: 'currentColor'
+      default: 'currentColor',
     },
 
     strokeWidth: {
       type: Number,
-      default: 2
+      default: 2,
     },
 
     viewBox: {
       type: String,
-      default: '0 0 24 24'
+      default: '0 0 24 24',
     },
 
     strokeLinecap: {
       type: String,
-      default: 'round'
+      default: 'round',
     },
 
     strokeLinejoin: {
       type: String,
-      default: 'round'
+      default: 'round',
     },
 
     size: {
       type: [String, Number],
-      default: '4'
-    }
+      default: '4',
+    },
   },
 
   data: () => ({
@@ -118,7 +118,7 @@ export default {
     isTriplePath: false,
     icon: {
       'path1': '',
-      'path2': ''
+      'path2': '',
     },
     iconsWithDoublePath: DoublePathIcons,
     filledIconsWithDoublePath: FilledDoublePathIcons,
@@ -130,12 +130,12 @@ export default {
       return this.name.split('_').join('-');
     },
 
-    classIconFinal () {
+    classIconFinal() {
       return `${this.iconNameClass} ${this.classIcon} w-${this.size} h-${this.size}`;
     },
 
     clipRuleData() {
-      return this.name == 'volume_off' ? 'evenodd' : this.clipRule;
+      return this.name === 'volume_off' ? 'evenodd' : this.clipRule;
     },
 
     icons() {
@@ -187,12 +187,18 @@ export default {
     },
 
     isDoublePath() {
-      return this.filledIconsWithDoublePath.includes(this.nameFormated);
+      return this.filledIconsWithDoublePath.includes(this.nameFormatted);
     },
 
-    nameFormated() {
+    nameFormatted() {
       return this.name.toLowerCase().replace('-', '_');
-    }
+    },
+  },
+
+  watch: {
+    name() {
+      this.buildIcon();
+    },
   },
 
   mounted() {
@@ -201,11 +207,11 @@ export default {
 
   methods: {
     buildIcon() {
-      this.buildIconStructure(this.nameFormated);
+      this.buildIconStructure(this.nameFormatted);
     },
 
     buildIconStructure(name) {
-      if(this.isFilled && this.filledIconsWithTriplePaths.includes(name)) {
+      if (this.isFilled && this.filledIconsWithTriplePaths.includes(name)) {
         this.generateTriplePathIcon();
 
         return;
@@ -225,7 +231,7 @@ export default {
     },
 
     getIconPath() {
-      return this.icons[this.nameFormated];
+      return this.icons[this.nameFormatted];
     },
 
     buildIconDoublePath() {
@@ -237,29 +243,29 @@ export default {
     generateTriplePathIcon() {
       this.isTriplePath = true;
 
-      this.icon = this.icosWithTriplePathFilled();
+      this.icon = this.iconWithTriplePathFilled();
     },
 
-    icosWithTriplePathFilled() {
+    iconWithTriplePathFilled() {
       const {
         path1,
         path2,
       } = this.getDoublePathIcon();
 
-      const path3 = this.icons[this.nameFormated].path3;
+      const path3 = this.icons[this.nameFormatted].path3;
 
-      return { path1, path2, path3 };
+      return {path1, path2, path3};
     },
 
     getDoublePathIcon() {
       const {
         path1,
         path2,
-      } = this.icons[this.nameFormated];
+      } = this.icons[this.nameFormatted];
 
-      return { path1, path2 };
+      return {path1, path2};
     },
-  }
+  },
 };
 
 // ".*-.*": REGEX TO SEARCH ANY -

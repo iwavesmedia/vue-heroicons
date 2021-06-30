@@ -328,7 +328,7 @@ describe('VueHeroicons', () => {
         path1,
         path2,
         path3
-      } = wrapper.vm.icosWithTriplePathFilled();
+      } = wrapper.vm.iconWithTriplePathFilled();
 
       const {
         filled: {
