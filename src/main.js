@@ -3,7 +3,7 @@ import VueHeroicons from "./VueHeroicons.vue";
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("VueHicons", VueHeroicons);
+  Vue.component('VueHeroicons', VueHeroicons);
 }
 
 const plugin = { install };

@@ -32,6 +32,7 @@
     "@vue/cli-plugin-unit-jest": "^4.5.6",
     "@vue/cli-service": "~4.5.0",
     "@vue/test-utils": "^1.0.3",
+    "autoprefixer": "^9.8.6",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
@@ -43,7 +44,11 @@
     "eslint-plugin-vue": "^7.0.0-beta.4",
     "file-loader": "^6.1.0",
     "node-sass": "^4.14.1",
+    "postcss": "^7.0.36",
+    "postcss-loader": "^4.3.0",
     "sass-loader": "^10.0.2",
+    "semantic-release": "^17.2.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
     "vue-loader": "^15.9.3",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^4.44.2",
@@ -63,7 +68,7 @@
     "tailwindcss",
     "tailwindui"
   ],
-  "homepage": "https://github.com/ArielOnoriaga/vue-hicons#readme",
+  "homepage": "https://github.com/iwavesmedia/vue-heroicons#readme",
   "directories": {
     "test": "tests"
   }
