@@ -109,13 +109,13 @@ jobs:
 
       - name: Install Dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
-        run: yarn install
+        run: npm ci
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Release
-        run: yarn semantic-release
+        run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
