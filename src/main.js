@@ -1,9 +1,9 @@
-import VueHicons from "./VueHicons.vue";
+import VueHeroicons from "./VueHeroicons.vue";
 
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component("VueHicons", VueHicons);
+  Vue.component("VueHicons", VueHeroicons);
 }
 
 const plugin = { install };
@@ -19,6 +19,6 @@ GlobalVue = typeof window !== "undefined"
 if (GlobalVue)
   GlobalVue.use(plugin);
 
-VueHicons.install = install;
+VueHeroicons.install = install;
 
-export default VueHicons;
+export default VueHeroicons;

@@ -1,11 +1,11 @@
 import { shallowMount } from '@vue/test-utils';
-import iconsComponent from '@/VueHicons';
+import VueHeroicons from '@/VueHeroicons';
 
 import iconsJSON from "@/assets/icons.json";
 const icons = iconsJSON;
 
-describe('VueHicons', () => {
-  const wrapper = shallowMount(iconsComponent, {
+describe('VueHeroicons', () => {
+  const wrapper = shallowMount(VueHeroicons, {
     propsData: {
       name: 'x',
       isFilled: false
@@ -32,14 +32,14 @@ describe('VueHicons', () => {
       .toBeTruthy();
   });
 
-  describe("computeds", () => {
+  describe("computed", () => {
     it("iconNameClass basic", () => {
-      expect(iconsComponent.computed.iconNameClass.call(wrapper.vm))
+      expect(VueHeroicons.computed.iconNameClass.call(wrapper.vm))
         .toBe('x');
     });
 
     it("classIconFinal", () => {
-      expect(iconsComponent.computed.classIconFinal.call(wrapper.vm))
+      expect(VueHeroicons.computed.classIconFinal.call(wrapper.vm))
         .toBe('x  w-4 h-4');
     });
 
@@ -53,7 +53,7 @@ describe('VueHicons', () => {
 
       await wrapper.vm.$nextTick();
 
-      expect(iconsComponent.computed.classIconFinal.call(wrapper.vm))
+      expect(VueHeroicons.computed.classIconFinal.call(wrapper.vm))
         .toBe('arrow-left bg-red-200 w-6 h-6');
     });
 
@@ -64,7 +64,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.strokeStyleComponent.call(wrapper.vm)
+        VueHeroicons.computed.strokeStyleComponent.call(wrapper.vm)
       ).toBe(1);
     });
 
@@ -74,13 +74,13 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.strokeStyleComponent.call(wrapper.vm)
+        VueHeroicons.computed.strokeStyleComponent.call(wrapper.vm)
       ).toBe(0);
     });
 
     it("strokeStyleComponent default value stroke icon not filled", () => {
       expect(
-        iconsComponent.computed.strokeStyleComponent.call(wrapper.vm)
+        VueHeroicons.computed.strokeStyleComponent.call(wrapper.vm)
       ).toBe(2);
     });
 
@@ -90,7 +90,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.fillStyleComponent.call(wrapper.vm)
+        VueHeroicons.computed.fillStyleComponent.call(wrapper.vm)
       ).toBe('currentColor');
     });
 
@@ -101,13 +101,13 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.fillStyleComponent.call(wrapper.vm)
+        VueHeroicons.computed.fillStyleComponent.call(wrapper.vm)
       ).toBe('red');
     });
 
     it("fillStyleComponent not default value", () => {
       expect(
-        iconsComponent.computed.fillStyleComponent.call(wrapper.vm)
+        VueHeroicons.computed.fillStyleComponent.call(wrapper.vm)
       ).toBe('none');
     });
 
@@ -117,7 +117,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.viewBoxComponent.call(wrapper.vm)
+        VueHeroicons.computed.viewBoxComponent.call(wrapper.vm)
       ).toBe('0 0 20 20');
     });
 
@@ -128,7 +128,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.viewBoxComponent.call(wrapper.vm)
+        VueHeroicons.computed.viewBoxComponent.call(wrapper.vm)
       ).toBe('0 0 23 23');
     });
 
@@ -139,7 +139,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.viewBoxComponent.call(wrapper.vm)
+        VueHeroicons.computed.viewBoxComponent.call(wrapper.vm)
       ).toBe('0 0 23 23');
     });
 
@@ -149,7 +149,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.fillRuleBasicPath.call(wrapper.vm)
+        VueHeroicons.computed.fillRuleBasicPath.call(wrapper.vm)
       ).toBe('evenodd');
     });
 
@@ -160,13 +160,13 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.fillRuleBasicPath.call(wrapper.vm)
+        VueHeroicons.computed.fillRuleBasicPath.call(wrapper.vm)
       ).toBe('nonzeros');
     });
 
     it("fillRuleBasicPath default value no filled", () => {
       expect(
-        iconsComponent.computed.fillRuleBasicPath.call(wrapper.vm)
+        VueHeroicons.computed.fillRuleBasicPath.call(wrapper.vm)
       ).toBe('nonzero');
     });
 
@@ -176,7 +176,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.clipRuleBasicPath.call(wrapper.vm)
+        VueHeroicons.computed.clipRuleBasicPath.call(wrapper.vm)
       ).toBe('evenodd');
     });
 
@@ -187,13 +187,13 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.clipRuleBasicPath.call(wrapper.vm)
+        VueHeroicons.computed.clipRuleBasicPath.call(wrapper.vm)
       ).toBe('nonzeros');
     });
 
     it("clipRuleBasicPath not default value not filled", () => {
       expect(
-        iconsComponent.computed.clipRuleBasicPath.call(wrapper.vm)
+        VueHeroicons.computed.clipRuleBasicPath.call(wrapper.vm)
       ).toBe('nonzero');
     });
 
@@ -203,7 +203,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.fillRuleTwoPath.call(wrapper.vm)
+        VueHeroicons.computed.fillRuleTwoPath.call(wrapper.vm)
       ).toBe('');
     });
 
@@ -215,7 +215,7 @@ describe('VueHicons', () => {
       });
 
       expect(
-        iconsComponent.computed.fillRuleTwoPath.call(wrapper.vm)
+        VueHeroicons.computed.fillRuleTwoPath.call(wrapper.vm)
       ).toBe('juan');
     });
   });

@@ -39,7 +39,7 @@ import FilledDoublePathIcons from "./assets/FilledDoublePathIcons";
 import TriplePathFilledIcons from "./assets/TriplePathFilledIcons";
 
 export default {
-  name: 'VueHicons',
+  name: 'VueHeroicons',
 
   props: {
     clipRule: {
