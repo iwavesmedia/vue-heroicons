@@ -105,7 +105,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: node_modules
-          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('yarn.lock') }}
+          key: 12.x-${{ runner.OS }}-build-${{ hashFiles('package.lock') }}
 
       - name: Install Dependencies
         if: steps.cache-modules.outputs.cache-hit != 'true'
