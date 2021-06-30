@@ -1,11 +1,14 @@
 {
-  "name": "vue-hicons",
+  "name": "@iwavesmedia/vue-heroicons",
   "version": "1.6.0",
-  "description": "A package to use Heroicons with vue",
-  "author": "Ariel Onoriaga",
+  "description": "A package to use Heroicons with Vue 2",
+  "author": "IWAVES Medientechnik e.U.",
+  "contributors": [
+    "Josua Müller <mueller.j.at@gmail.com> (https://github.com/hypnotox)"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ArielOnoriaga/vue-hicons"
+    "url": "git+https://github.com/ArielOnoriaga/vue-hicons.git"
   },
   "bugs": {
     "url": "https://github.com/ArielOnoriaga/vue-hicons/issues"
@@ -24,7 +27,6 @@
   "devDependencies": {
     "@ianaya89/vue-cli-plugin-tailwind": "~1.1.0",
     "@vue/babel-preset-app": "^4.5.13",
-    "eslint-plugin-jest": "^24.3.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "^4.5.6",
@@ -37,6 +39,7 @@
     "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
     "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^24.3.6",
     "eslint-plugin-vue": "^7.0.0-beta.4",
     "file-loader": "^6.1.0",
     "node-sass": "^4.14.1",
@@ -59,5 +62,9 @@
     "heroicons",
     "tailwindcss",
     "tailwindui"
-  ]
+  ],
+  "homepage": "https://github.com/ArielOnoriaga/vue-hicons#readme",
+  "directories": {
+    "test": "tests"
+  }
 }
